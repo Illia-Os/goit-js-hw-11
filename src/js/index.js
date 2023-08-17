@@ -47,7 +47,7 @@ async function onSearch(e) {
   photosApiService.query = e.currentTarget.elements.searchQuery.value.trim();
 
   if (!photosApiService.query) {
-    Notify.failure('Sorry, but you must enter a value');
+    Notify.failure('Вибачте, але ви повинні ввести значення');
     loadMoreBtn.hide();
     return;
   }
@@ -63,7 +63,7 @@ async function onSearch(e) {
 
     if (photoArray.length === 0) {
       Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
+        'Вибачте, немає зображень, які відповідають вашому пошуковому запиту. Будь ласка спробуйте ще раз.'
       );
       return;
     }
@@ -73,9 +73,7 @@ async function onSearch(e) {
     renderPhotos(photoArray);
 
     if (photosApiService.totalLoadedPhoto >= photosApiService.totalHits) {
-      Notify.failure(
-        "We're sorry, but you've reached the end of search results."
-      );
+      Notify.failure('Вибачте, але ви досягли кінця результатів пошуку.');
       return;
     }
 
@@ -93,7 +91,7 @@ async function onLoadMoreBtnClick() {
     renderPhotos(photoArray);
     if (photosApiService.totalLoadedPhoto >= photosApiService.totalHits) {
       Notify.failure(
-        "We're sorry, but you've reached the end of search results."
+        "Вибачте, але ви досягли кінця результатів пошуку."
       );
       loadMoreBtn.hide();
       return;
