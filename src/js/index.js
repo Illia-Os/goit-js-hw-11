@@ -32,7 +32,7 @@ async function onSearch(e) {
       e.currentTarget.elements.searchQuery.value.trim() &&
     !photosApiService.query
   ) {
-    Notify.failure('Sorry, but you must enter a value');
+    Notify.failure('Вибачте, але ви повинні ввести значення');
     return;
   }
 
